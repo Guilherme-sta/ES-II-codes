@@ -1,16 +1,11 @@
-#include "fila.h" 
-# define fmt "%d "
+#include "arvore.h"
+#include "fila.h"
+# define fmt "%d"
 # define MAX 100
-
-typedef int Item;
-typedef struct arv {
-    struct arv *esq;
-    Item item;
-    struct arv *dir;
-} *Arv;
 
 Arv arv(Arv e, Item x, Arv d) {
     Arv n = malloc(sizeof(struct arv));
+    if (n == NULL) abort();
     n->esq = e;
     n->item = x;
     n->dir = d;
@@ -18,19 +13,20 @@ Arv arv(Arv e, Item x, Arv d) {
 }
 
 void emnivel(Arv A) {
-    if ( A==NULL ) return;
+    if (A == NULL) return;
     Fila F = fila(MAX);
     enfileira(A,F);
-    while( !vaziaf(F) ) {
-        Arv A = desenfileira(F);
+    while (!vaziaf(F)) {
+         Arv A = desenfileira(F);
         printf(fmt,A->item);
         if ( A->esq != NULL ) enfileira(A->esq,F);
-        if ( A->dir != NULL ) enfileira(A->dir,F);
+        if ( A->dir != NULL ) enfileira(A->dir,F); 
     }
+    destroif(&F);
 }
 
 void emordem(Arv A) {
-    if ( A==NULL ) return;
+    if (A == NULL) return;
     emordem(A->esq);
     printf(fmt,A->item);
     emordem(A->dir);
@@ -92,14 +88,4 @@ void rem(Item x, Arv *A) {
     }
     else if(x <= (*A)->item) rem(x,&(*A)->esq);
     else rem(x,&(*A)->dir);
-    }
-
-
-int main() {
-    Arv R = NULL;
-    ins(5,&R); ins(7,&R); ins(3,&R); ins(9,&R); ins(1,&R);
-    ins(6,&R); ins(4,&R); ins(8,&R); ins(0,&R); ins(2,&R);
-    emordem(R);
-    
-    return 0;
 }
