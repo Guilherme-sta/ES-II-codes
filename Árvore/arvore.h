@@ -19,7 +19,7 @@ void posordem(Arv A);
 void destroi(Arv *A);
 void ins(Item x, Arv *A);
 int busca(Item x, Arv A);
-Item renmax(Arv *A);
+Item remmax(Arv *A);
 void rem(Item x, Arv *A);
 
 #endif

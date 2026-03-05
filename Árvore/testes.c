@@ -3,15 +3,17 @@
 int main() {
     // testes:
     Arv R = arv(arv(arv(NULL,4,NULL),2,arv(NULL,5,NULL)),1,arv(NULL,3,arv(NULL,6,NULL)));
-    printf("R em ordem: ");
+    printf("Arvore R em ordem: ");
     emordem(R);
     printf("\n");
-    printf("R em pre-ordem: ");
+    printf("Arvore R em pre-ordem: ");
     preordem(R);
     printf("\n");
-    printf("R em pos-ordem: ");
+    printf("Arvore R em pos-ordem: ");
     posordem(R);
     printf("\n");
+
+    destroi(&R);
 
     Arv S = NULL;
     ins(5,&S); 
@@ -26,9 +28,8 @@ int main() {
     ins(2,&S);
     printf("S em ordem: ");
     emordem(S);
-    printf("\n");
+
+    destroi(&S);
 
     return 0;
-
-    // questões:
 }
