@@ -1,1 +1,0 @@
-Pasta de armazanamento dos códigos referentes ao capítulo de árvores em estrutura de dados.
