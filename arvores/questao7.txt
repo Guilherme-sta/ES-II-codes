@@ -1,0 +1,20 @@
+Resultados com remoção normal: 
+Arvore R em ordem: 0123456781011121314
+Altura de R: 4
+Arvore R em ordem apos remocao normal do 8: 012345671011121314
+Altura de R apos remocao normal do 8: 4
+
+Resultados com remoção por fusão:
+Arvore R em ordem: 0123456781011121314
+Altura de R: 4
+Arvore R em ordem apos remocao por fusao do 8: 012345671011121314
+Altura de R apos remocao por fusao do 8: 6
+
+Conclusão: 
+Remoção normal: a árvore resultante tem raiz 7, altura 4 e 13 nós.
+Remoção por fusão: a árvore resultante tem raiz 7, altura 6 e 13 nós.
+Comparação: as raízes são iguais (ambas ficam com 7, que é o máximo da subárvore esquerda de 8), 
+mas as alturas são diferentes. A fusão aumentou a altura de 4 para 6 porque toda a subárvore direita 
+(raiz 11) foi pendurada no nó mais à direita da subárvore esquerda (o nó 7), alongando esse caminho. 
+Já o método da Fig. 13.17 apenas substituiu o item 8 pelo 7 no mesmo nó, preservando a estrutura 
+original e mantendo a altura em 4.
